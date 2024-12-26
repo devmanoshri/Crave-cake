@@ -1,0 +1,78 @@
+.footer-container {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  .footer-wrap-inner {
+    padding: 80px 150px;
+    .footer-container-inner {
+      margin: 20px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+
+      .contact-details {
+        h5 {
+          color: var(--color-white);
+        }
+        p {
+          color: var(--color-gray);
+        }
+        display: flex;
+        flex-direction: column;
+      }
+      .footer-middle-column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        .sub-heading {
+          font-size: 2rem;
+        }
+        h4 {
+          color: var(--color-white);
+        }
+        .footer-text {
+          color: var(--color-gray);
+          max-width: 300px;
+        }
+        .social-media {
+          display: flex;
+          justify-content: center;
+          gap: 40px;
+          i {
+            font-size: 1.5;
+            position: relative;
+            color: var(--color-gold);
+            &::after {
+              content: "";
+              position: absolute;
+              top: -6px;
+              left: -6px;
+              display: block;
+              width: 35px;
+              height: 35px;
+              border: 1px solid var(--color-gold);
+              background-color: transparent;
+              transform: rotate(45deg);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .copyright-section {
+    color: var(--color-gray);
+    border-top: 1px solid var(--color-gold);
+    font-size: smaller;
+  }
+}
+
+.back-to-top-container {
+  position: relative;
+  a {
+    text-decoration: none;
+    i {
+      color: #c19d56;
+      font-size: 3.5rem;
+    }
+  }
+}

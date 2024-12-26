@@ -1,0 +1,29 @@
+:root {
+  --font-cursive: "Great Vibes", cursive;
+  --font-block: "Montserrat", sans-serif;
+  --font-body: "Cormorant", serif;
+
+  --color-gold: #c19d56;
+  --color-primary: #000000;
+  --color-text: #000000;
+  --color-gray: #C8C8C8;
+  --color-background: #ffffff;
+  --color-background-gray1: #fbf6f3;
+  --color-white: #ffffff;
+
+  --color-border: #e3e3e3;
+
+  --spacing-small: 8px;
+  --spacing-medium: 16px;
+  --spacing-large: 32px;
+
+  --border-radius: 8px;
+
+  --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.15);
+
+  --transition-fast: 0.2s ease-in-out;
+  --transition-medium: 0.4s ease-in-out;
+
+  --width-container: 1200px;
+}

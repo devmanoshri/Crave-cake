@@ -1,0 +1,41 @@
+<app-hero-image pageTitle="shop"></app-hero-image>
+<div class="container-fluid">
+  <div class="sub-heading text-center mt-10">best deals for you</div>
+  <h2 class="text-center mb-2">Cups of Cutenes</h2>
+  <div class="separator mb-6"></div>
+
+  <div class="container">
+    <div class="text-center mb-6">
+      Delight in our charming mini cakes and cupcakes, perfect for any moment!
+      Each cup is a burst of flavor, carefully crafted to satisfy your cravings
+      and bring a smile to your day. Treat yourself or share the cuteness with
+      someone special!
+    </div>
+
+    <div class="product-list text-center mb-10">
+      @for (item of [1,2,3,4,5,6,7,8,9,10]; let i = $index; track item) {
+      <div class="product-card">
+        <div class="image-container">
+          <img
+            src="/assets/images/products/shop-img({{ i + 1 }}).jpg"
+            alt="Cupcake {{ i + 1 }}"
+          />
+          <div class="add-to-cart-container">
+            <a href=""><i class="ph ph-basket"></i> Add to cart</a>
+          </div>
+        </div>
+        <div class="product-info mt-2">
+          <a routerLink="/products/details/1" routerLinkActive="active">
+            <h5>Strawberry Cupcake</h5>
+            <p class="varieties">
+              Delicious strawberry, cupcake with a hint of vanilla
+            </p>
+            <div class="price">$2.50</div>
+          </a>
+          <!-- <button class="btn btn-secondary mt-2">Add to Cart</button> -->
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</div>

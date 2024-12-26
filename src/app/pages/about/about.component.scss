@@ -1,0 +1,26 @@
+.about-box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.my-story-container {
+  background-color: var(--color-background-gray1);
+  margin: 150px 0;
+  .my-story {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    gap: 24px;
+
+    .img-container {
+      position: relative;
+      img {
+        max-width: 100%;
+        width: 600px;
+        position: absolute;
+        top: 50%;
+        margin-top: -285px;
+      }
+    }
+  }
+}

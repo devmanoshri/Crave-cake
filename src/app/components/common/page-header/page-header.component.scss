@@ -1,0 +1,64 @@
+header {
+  .logo {
+    color: var(--color-gold);
+    font-family: var(--font-cursive);
+    text-align: center;
+    font-size: 4rem;
+    margin: 48px 0 0;
+  }
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    a {
+      font-family: var(--font-block);
+      color: var(--color-text);
+      text-decoration: none;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      position: relative;
+      cursor: pointer;
+      &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 20px;
+        height: 1px;
+        background: var(--color-text);
+        left: 50%;
+        margin-left: -10px;
+        display: none;
+      }
+      &.active,
+      &:hover {
+        color: var(--color-gold);
+        &::after {
+          display: block;
+          background: var(--color-gold);
+        }
+      }
+    }
+  }
+
+  .cart-container {    
+    position: absolute;
+    right: 70px;
+    top: 120px;
+    a {
+      text-decoration: none;
+      color: var(--color-gold);
+      cursor: pointer;
+      .cart-icon {
+        position: relative;
+        font-size: 2rem;
+      }
+      .cart-count {
+        position: relative;
+        font-size: 1.5rem;
+        top: -21px;
+        left: 40px;
+      }
+    }
+  }
+}

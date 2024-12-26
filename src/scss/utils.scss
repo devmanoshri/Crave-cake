@@ -1,0 +1,74 @@
+$alignments: center, left, right;
+
+@each $alignment in $alignments {
+  .text-#{$alignment} {
+    text-align: $alignment;
+  }
+}
+
+$displays: flex, grid, block, inline-block, inline-flex;
+@each $display in $displays {
+  .display-#{$display} {
+    display: $display;
+  }
+}
+
+$baseMultiplier: 8px;
+
+@for $i from 1 through 10 {
+  // margins
+  .m-#{$i} {
+    margin: $i * $baseMultiplier;
+  }
+  .mr-#{$i} {
+    margin-right: $i * $baseMultiplier;
+  }
+  .ml-#{$i} {
+    margin-left: $i * $baseMultiplier;
+  }
+  .mt-#{$i} {
+    margin-top: $i * $baseMultiplier;
+  }
+  .mb-#{$i} {
+    margin-bottom: $i * $baseMultiplier;
+  }
+  .mx-#{$i} {
+    margin-left: $i * $baseMultiplier;
+    margin-right: $i * $baseMultiplier;
+  }
+  .my-#{$i} {
+    margin-top: $i * $baseMultiplier;
+    margin-bottom: $i * $baseMultiplier;
+  }
+  // paddings
+  .p-#{$i} {
+    padding: $i * $baseMultiplier;
+  }
+  .pr-#{$i} {
+    padding-right: $i * $baseMultiplier;
+  }
+
+  .pl-#{$i} {
+    padding-left: $i * $baseMultiplier;
+  }
+  .pt-#{$i} {
+    padding-top: $i * $baseMultiplier;
+  }
+  .pb-#{$i} {
+    padding-bottom: $i * $baseMultiplier;
+  }
+  .px-#{$i} {
+    padding-left: $i * $baseMultiplier;
+    padding-right: $i * $baseMultiplier;
+  }
+  .py-#{$i} {
+    padding-top: $i * $baseMultiplier;
+    padding-bottom: $i * $baseMultiplier;
+  }
+}
+
+.two-column {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
