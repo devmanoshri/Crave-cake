@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { HeroImageComponent } from '../../components/common/hero-image/hero-image.component';
 import { ActivatedRoute, RouterModule } from '@angular/router';
+import { HeroImageComponent } from '../../components/common/hero-image/hero-image.component';
+import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-product-details',
@@ -11,11 +12,19 @@ import { ActivatedRoute, RouterModule } from '@angular/router';
 })
 export class ProductDetailsComponent {
   productID: string = '';
-  constructor(private route: ActivatedRoute) {}
+  constructor(
+    private route: ActivatedRoute,
+    private productService: ProductService
+  ) {}
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       this.productID = params['id'];
     });
+    this.productService
+      .getProductDetails(this.productID)
+      .subscribe((response) => {
+        console.log(response);
+      });
   }
 }
