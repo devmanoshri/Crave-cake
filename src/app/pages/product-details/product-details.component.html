@@ -1,47 +1,75 @@
 <app-hero-image pageTitle="Shop"></app-hero-image>
-<div class="container-fluid">
-  <div class="product-container">
-    <div class="product-image">
-      <img
-        src="/assets/images/products/shop-img(3).jpg"
-        alt="product-image-3"
-      />
-    </div>
-    <div class="product-details">
-      <h2>Strawberry Cupcake</h2>
-      <div class="price">$100</div>
-      <div class="rating">***** (1 customer review)</div>
-      <p class="varieties">
-        Delicious strawberry, cupcake with a hint of vanilla
-      </p>
-      <div class="quantity">
-        <i class="ph ph-minus"></i><span class="quantity mx-2">20</span
-        ><i class="ph ph-plus"></i>
+<div class="container-fluid px-10">
+  <div class="container my-10">
+    <div class="product-container display-flex">
+      <div class="product-image">
+        <img
+          src="/assets/images/products/shop-img({{ productID }}).jpg"
+          alt="product-image-3"
+        />
       </div>
-      <div class="add-to-cart-container">
-        <button class="btn btn-secondary mt-2">Add to Cart</button>
+      <div class="product-details ml-5 display-flex">
+        <h3>Strawberry Cupcake</h3>
+        <div class="price">$100</div>
+        <div class="rating">***** (1 customer review)</div>
+        <p class="varieties">
+          Delicious strawberry, cupcake with a hint of vanilla
+        </p>
+        <div class="quantity-container">
+          <i class="ph ph-minus"></i><span class="quantity mx-2">20</span
+          ><i class="ph ph-plus"></i>
+        </div>
+        <div class="add-to-cart-container">
+          <button class="btn btn-secondary mt-2">Add to Cart</button>
+        </div>
+        <div class="categories">
+          Categories:
+          <span class="categories-text">Cupcakes, Raw Cakes, Truffles</span>
+        </div>
       </div>
-      <div class="categories">Categories: Cupcakes, Raw Cakes, Truffles</div>
     </div>
-  </div>
-  <div class="product-description">
-    <h3>description</h3>
-    <div>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Scelerisque viverra
-      mauris in aliquam. Ullamcorper malesuada proin libero nunc consequat.
-      Sagittis aliquam malesuada bibendum arcu vitae elementum curabitur vitae.
-      Massa enim nec dui nunc mattis enim ut tellus elementum. Suscipit tellus
-      mauris a diam maecenas nisi vitae.
+    <div class="product-description my-10">
+      <h5>description</h5>
+      <div>
+        Delicious strawberry cupcake with a hint of vanilla, each bite a perfect
+        balance of sweetness and flavour. The soft, fluffy sponge melts in your
+        mouth, leaving a delightful aftertaste of summer berries. Topped with a
+        swirl of creamy frosting, it's the perfect indulgence for any occasion.
+        Pair it with a warm cup of tea, and you have a treat that's simply
+        irresistible.
+      </div>
     </div>
-  </div>
-  <div class="related-products">
-    <h2>Related products</h2>
-    <div class="related-images">
-        <img src="/assets/images/products/shop-img(1).jpg" alt="" >
-        <img src="/assets/images/products/shop-img(2).jpg" alt="" >
-        <img src="/assets/images/products/shop-img(3).jpg" alt="" >
-        <img src="/assets/images/products/shop-img(4).jpg" alt="" >
+
+    <div class="related-products">
+      <h4>Related products</h4>
+      <div class="product-list display-grid text-center mb-10">
+        @for (item of [1,2,3,4]; let i = $index; track item) {
+        <div class="product-card">
+          <div class="image-container">
+            <img
+              src="/assets/images/products/shop-img({{ i + 1 }}).jpg"
+              alt="Cupcake {{ i + 1 }}"
+            />
+            <div class="add-to-cart-container">
+              <a href=""><i class="ph ph-basket"></i> Add to cart</a>
+            </div>
+          </div>
+          <div class="product-info mt-2">
+            <a
+              routerLink="/products/details/{{ i + 1 }}"
+              routerLinkActive="active"
+            >
+              <h5>Strawberry Cupcake</h5>
+              <p class="varieties">
+                Delicious strawberry, cupcake with a hint of vanilla
+              </p>
+              <div class="price">$2.50</div>
+            </a>
+            <!-- <button class="btn btn-secondary mt-2">Add to Cart</button> -->
+          </div>
+        </div>
+        }
+      </div>
     </div>
   </div>
 </div>
