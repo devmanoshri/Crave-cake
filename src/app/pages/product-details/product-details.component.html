@@ -1,42 +1,43 @@
 <app-hero-image pageTitle="Shop"></app-hero-image>
+
 <div class="container-fluid px-10">
   <div class="container my-10">
     <div class="product-container display-flex">
       <div class="product-image">
         <img
-          src="/assets/images/products/shop-img({{ productID }}).jpg"
+          src="/assets/images/products/shop-img({{ product.id }}).jpg"
           alt="product-image-3"
         />
       </div>
       <div class="product-details ml-5 display-flex">
-        <h3>Strawberry Cupcake</h3>
-        <div class="price">$100</div>
-        <div class="rating">***** (1 customer review)</div>
+        <h3>{{ product.name }}</h3>
+        <div class="price">{{ product.price }}NOK</div>
+        <div class="rating">{{ product.rating }} (1 customer review)</div>
         <p class="varieties">
-          Delicious strawberry, cupcake with a hint of vanilla
+          {{ product.description }}
         </p>
-        <div class="quantity-container">
-          <i class="ph ph-minus"></i><span class="quantity mx-2">20</span
-          ><i class="ph ph-plus"></i>
-        </div>
-        <div class="add-to-cart-container">
-          <button class="btn btn-secondary mt-2">Add to Cart</button>
+        <div class="display-flex quantity-cart-container">
+          <div class="quantity-container">
+            <i class="ph ph-minus"></i>
+            <span class="quantity ml-3">20</span>
+            <i class="ph ph-plus"></i>
+          </div>
+          <div class="add-to-cart-container">
+            <button class="btn btn-secondary mt-2">Add to Cart</button>
+          </div>
         </div>
         <div class="categories">
           Categories:
-          <span class="categories-text">Cupcakes, Raw Cakes, Truffles</span>
+          <span class="categories-text">{{ product.product_category }}</span>
         </div>
       </div>
     </div>
     <div class="product-description my-10">
       <h5>description</h5>
       <div>
-        Delicious strawberry cupcake with a hint of vanilla, each bite a perfect
-        balance of sweetness and flavour. The soft, fluffy sponge melts in your
-        mouth, leaving a delightful aftertaste of summer berries. Topped with a
-        swirl of creamy frosting, it's the perfect indulgence for any occasion.
-        Pair it with a warm cup of tea, and you have a treat that's simply
-        irresistible.
+        <p>{{ product.description }}</p>
+        <p>{{ product.weight }}</p>
+        <p>{{ product.dimensions }}</p>
       </div>
     </div>
 

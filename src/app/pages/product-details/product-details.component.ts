@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { HeroImageComponent } from '../../components/common/hero-image/hero-image.component';
 import { ProductService } from '../../services/product.service';
+import { Product } from '../../models/product.model';
 
 @Component({
   selector: 'app-product-details',
@@ -11,20 +12,17 @@ import { ProductService } from '../../services/product.service';
   styleUrl: './product-details.component.scss',
 })
 export class ProductDetailsComponent {
-  productID: string = '';
-  constructor(
-    private route: ActivatedRoute,
-    private productService: ProductService
-  ) {}
+  product = {} as Product;
+  productId: string = '';
+
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
-      this.productID = params['id'];
+      this.productId = params['id'];
     });
-    this.productService
-      .getProductDetails(this.productID)
-      .subscribe((response) => {
-        console.log(response);
-      });
+
+    this.product = this.route.snapshot.data['product'];
+    //console.log(this.product);
   }
 }

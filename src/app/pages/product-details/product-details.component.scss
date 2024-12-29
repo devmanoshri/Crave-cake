@@ -6,15 +6,36 @@
     .price {
       font-size: 2rem;
     }
-    .quantity-container {
-      i {
-        cursor: pointer;
-      }
-      i:hover {
-        color: var(--color-gold);
-      }
-      .quantity {
-        font-size: 1.5rem;
+    .quantity-cart-container {
+      gap:10px;
+      .quantity-container {
+        position: relative;
+        width: 105px;
+        height: 60px;
+        border: 1px solid var(--color-gold);
+        .ph {
+          position: absolute;
+          right: 0;
+          top: 0;
+          width: 30px;
+          height: 30px;
+          border: 1px solid var(--color-gold);
+          cursor: pointer;
+          padding: 4px;
+        }
+        .ph-minus {
+          top: 30px;
+          border: 0 0 0 1px;
+        }
+        .ph-plus {
+          border: 0 0 1px 1px;
+        }
+        .ph:hover {
+          color: var(--color-gold);
+        }
+        .quantity {
+          font-size: 2rem;
+        }
       }
     }
     .categories-text {

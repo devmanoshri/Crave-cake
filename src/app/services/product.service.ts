@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { map, Observable, of, switchMap } from 'rxjs';
 import { Product, ResponseWrapper } from '../models/product.model';
 
 @Injectable({
@@ -38,9 +38,17 @@ export class ProductService {
     );
   }
 
-  getProductDetails(id: string): Observable<ResponseWrapper<Product>> {
-    return this.httpClient.get<ResponseWrapper<Product>>(
-      `${this.apiUrl}/product/${id}`
-    );
+  getProductDetails(id: number): Observable<Product> {
+    return this.httpClient
+      .get<ResponseWrapper<Product[]>>(`${this.apiUrl}/product-list`)
+      .pipe(
+        map((response) => response.data),
+        switchMap((products) => {
+          const product =
+            products.find((product) => product.id === id) || ({} as Product);
+          //console.log(product)
+          return of(product);
+        })
+      );
   }
 }
