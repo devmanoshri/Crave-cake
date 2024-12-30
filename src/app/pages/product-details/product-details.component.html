@@ -9,7 +9,7 @@
           alt="product-image-3"
         />
       </div>
-      <div class="product-details ml-5 display-flex">
+      <div class="product-details display-flex">
         <h3>{{ product.name }}</h3>
         <div class="price">{{ product.price }}NOK</div>
         <div class="rating">{{ product.rating }} (1 customer review)</div>
@@ -33,16 +33,51 @@
       </div>
     </div>
     <div class="product-description my-10">
-      <h5>description</h5>
+      <input
+        type="radio"
+        id="tab-231"
+        class="tab"
+        name="number"
+        value="description"
+        checked
+      /><label for="tab-231">Description</label>
+      <input
+        type="radio"
+        id="tab-232"
+        class="tab"
+        name="number"
+        value="additional-info"
+      /><label for="tab-232">Additional information</label>
+      <input
+        type="radio"
+        id="tab-233"
+        class="tab"
+        name="number"
+        value="reviews"
+      /><label for="tab-233">Reviews (1)</label>
+
+      <div class="tab-content-container my-2">
+        <div class="tab-content">{{ product.description }}</div>
+        <div class="tab-content">
+          <p>{{ product.weight }}</p>
+          <p>{{ product.dimensions }}</p>
+        </div>
+        <div class="tab-content">
+          Add a review Your email address will not be published. Required fields
+          are marked * Your rating *
+        </div>
+      </div>
+
+      <!-- <h5>description</h5>
       <div>
         <p>{{ product.description }}</p>
         <p>{{ product.weight }}</p>
         <p>{{ product.dimensions }}</p>
-      </div>
+      </div> -->
     </div>
 
     <div class="related-products">
-      <h4>Related products</h4>
+      <h4 class="my-5">Related products</h4>
       <div class="product-list display-grid text-center mb-10">
         @for (item of [1,2,3,4]; let i = $index; track item) {
         <div class="product-card">

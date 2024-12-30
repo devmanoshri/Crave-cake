@@ -6,8 +6,19 @@ import { productResolver } from './resolvers/product.resolver';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'products/list',
+    redirectTo: 'home',
     pathMatch: 'full',
+  },
+  {
+    path: 'home',
+    component: RootComponent,
+    children: [
+      {
+        path: '',
+        loadComponent: () =>
+          import('./pages/home/home.component').then((c) => c.HomeComponent),
+      },
+    ],
   },
   {
     path: 'products',
@@ -26,9 +37,9 @@ export const routes: Routes = [
           import('./pages/product-details/product-details.component').then(
             (c) => c.ProductDetailsComponent
           ),
-          resolve:{
-            product: productResolver
-          }
+        resolve: {
+          product: productResolver,
+        },
       },
     ],
   },
