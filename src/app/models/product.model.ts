@@ -3,7 +3,6 @@ export interface ResponseWrapper<T> {
 }
 
 export interface Product {
-  find(arg0: (product: any) => boolean): unknown;
   id: number;
   name: string;
   description: string;
