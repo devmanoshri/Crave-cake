@@ -5,11 +5,12 @@ import { Observable } from 'rxjs';
 import { HeroImageComponent } from '../../components/common/hero-image/hero-image.component';
 import { Product, ResponseWrapper } from '../../models/product.model';
 import { ProductService } from '../../services/product.service';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [HeroImageComponent, RouterModule, CommonModule],
+  imports: [HeroImageComponent, RouterModule, CommonModule, NgOptimizedImage],
   providers: [],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.scss',

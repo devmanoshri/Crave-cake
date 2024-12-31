@@ -13,45 +13,25 @@
         </tr>
       </thead>
       <tbody>
+        @for(item of cartItems; let i = $index; track item.id) {
         <tr class="py-3">
           <td><i class="ph ph-x"></i></td>
           <td>
-            <img src="assets/images/products/shop-img(19).jpg" alt="item1" />
+            <img
+              src="assets/images/products/shop-img({{ item.product_id }}).jpg"
+              alt="item1"
+            />
           </td>
-          <td>Strawberry Cupcake</td>
-          <td>$2.50</td>
+          <td>{{ item.product_name }}</td>
+          <td>{{ item.product_price }} nok</td>
           <td class="quantity-container">
-            <i class="ph ph-minus"></i><span class="quantity mx-2">20</span
+            <i class="ph ph-minus"></i
+            ><span class="quantity mx-2">{{ item.quantity }}</span
             ><i class="ph ph-plus"></i>
           </td>
-          <td>$50.00</td>
+          <td>{{ item.product_price * item.quantity }} nok</td>
         </tr>
-        <tr class="py-3">
-          <td><i class="ph ph-x"></i></td>
-          <td>
-            <img src="assets/images/products/shop-img(19).jpg" alt="item1" />
-          </td>
-          <td>Strawberry Cupcake</td>
-          <td>$2.50</td>
-          <td class="quantity-container">
-            <i class="ph ph-minus"></i><span class="quantity mx-2">20</span
-            ><i class="ph ph-plus"></i>
-          </td>
-          <td>$50.00</td>
-        </tr>
-        <tr class="py-3">
-          <td><i class="ph ph-x"></i></td>
-          <td>
-            <img src="assets/images/products/shop-img(19).jpg" alt="item1" />
-          </td>
-          <td>Strawberry Cupcake</td>
-          <td>$2.50</td>
-          <td class="quantity-container">
-            <i class="ph ph-minus"></i><span class="quantity mx-2">20</span
-            ><i class="ph ph-plus"></i>
-          </td>
-          <td>$50.00</td>
-        </tr>
+        }
       </tbody>
     </table>
 
@@ -71,7 +51,7 @@
           </tr>
           <tr>
             <td>Total</td>
-            <td >$55.00</td>
+            <td>$55.00</td>
           </tr>
         </tbody>
       </table>

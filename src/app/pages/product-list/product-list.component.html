@@ -20,10 +20,12 @@
       <div class="product-card">
         <div class="image-container">
           <img
-            src="/assets/images/products/shop-img({{ i + 1 }}).jpg"
+            #prodImg
+            src="./assets/images/products/shop-img({{ i + 1 }}).jpg"
             alt="Cupcake {{ i + 1 }}"
+            (error)="prodImg.src = './assets/images/products/default.jpg'"
           />
-          <div class="add-to-cart-container">
+          <div class="add-to-cart-container mobile-hide">
             <a href=""><i class="ph ph-basket"></i> Add to cart</a>
           </div>
         </div>
@@ -38,7 +40,7 @@
             </p>
             <div class="price">{{ product.price }}NOK</div>
           </a>
-          <!-- <button class="btn btn-secondary mt-2">Add to Cart</button> -->
+          <button class="btn btn-secondary mt-2 mobile-show" onclick="addCartItem()">Add to Cart</button>
         </div>
       </div>
       }

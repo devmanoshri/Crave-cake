@@ -38,9 +38,46 @@ h5 {
 
 .sub-heading {
   font-family: var(--font-cursive);
-  font-size: 50px;
+  font-size: 3.125rem;
   line-height: 40px;
   color: var(--color-gold);
   font-style: normal;
   text-transform: lowercase;
+}
+
+@media only screen and (min-width: 681px) and (max-width: 1024px) {
+  h1 {
+    font-size: 3.625rem;
+  }
+  h2 {
+    font-size: 2.9375rem;
+  }
+  h3 {
+    font-size: 2.25rem;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  h1 {
+    font-size: 2.125rem;
+    letter-spacing: 4px;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.8125rem;
+  }
+  .sub-heading {
+    font-size: 2.5rem;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-text);
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    color: var(--color-gold);
+  }
 }
