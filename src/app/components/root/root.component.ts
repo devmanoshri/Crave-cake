@@ -1,7 +1,11 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import {
+  ActivatedRoute,
+  RouteConfigLoadEnd,
+  RouterModule,
+} from '@angular/router';
+import { PageFooterComponent } from '../common/page-footer/page-footer.component';
 import { PageHeaderComponent } from '../common/page-header/page-header.component';
-import { PageFooterComponent } from "../common/page-footer/page-footer.component";
 
 @Component({
   selector: 'app-root',
@@ -10,4 +14,24 @@ import { PageFooterComponent } from "../common/page-footer/page-footer.component
   templateUrl: './root.component.html',
   styleUrl: './root.component.scss',
 })
-export class RootComponent {}
+export class RootComponent {
+  hideFooter = false;
+  showScrollButton = false;
+
+  constructor(private route: ActivatedRoute) {
+    this.route.data.subscribe((data) => {
+      this.hideFooter = data['showFooter'] === false;
+    });
+    window.addEventListener('scroll', () => {
+      this.showScrollButton = window.scrollY >= 500;
+    });
+  }
+
+  scrollToTop(): void {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    });
+  }
+}
