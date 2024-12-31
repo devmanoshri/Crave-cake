@@ -1,8 +1,8 @@
 <app-hero-image pageTitle="Shop"></app-hero-image>
 
-<div class="container-fluid px-10">
+<div class="container-fluid">
   <div class="container my-10">
-    <div class="product-container display-flex">
+    <div class="product-container">
       <div class="product-image">
         <img
           src="/assets/images/products/shop-img({{ product.id }}).jpg"
@@ -16,7 +16,7 @@
         <p class="varieties">
           {{ product.description }}
         </p>
-        <div class="display-flex quantity-cart-container">
+        <div class="quantity-cart-container">
           <div class="quantity-container">
             <i class="ph ph-minus"></i>
             <span class="quantity ml-3">20</span>
@@ -67,17 +67,10 @@
           are marked * Your rating *
         </div>
       </div>
-
-      <!-- <h5>description</h5>
-      <div>
-        <p>{{ product.description }}</p>
-        <p>{{ product.weight }}</p>
-        <p>{{ product.dimensions }}</p>
-      </div> -->
     </div>
 
     <div class="related-products">
-      <h4 class="my-5">Related products</h4>
+      <h4>Related products</h4>
       <div class="product-list display-grid text-center mb-10">
         @for (item of [1,2,3,4]; let i = $index; track item) {
         <div class="product-card">

@@ -1,7 +1,11 @@
 .product-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  gap: 36px;
   .product-image {
     img {
-      width: 90%;
+      width: 100%;
+      min-width: 450px;
     }
   }
   .product-details {
@@ -12,7 +16,8 @@
       font-size: 2rem;
     }
     .quantity-cart-container {
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(215px, 1fr));
 
       .quantity-container {
         position: relative;
@@ -47,7 +52,6 @@
         }
       }
       .add-to-cart-container {
-        margin-right: 50px;
         button {
           background-color: var(--color-gold);
           color: var(--color-white);
@@ -83,7 +87,6 @@
     cursor: pointer;
   }
   input:checked + label {
-    background: #ffffff;
     color: var(--color-primary);
     border-bottom: 1px solid var(--color-gold);
   }
