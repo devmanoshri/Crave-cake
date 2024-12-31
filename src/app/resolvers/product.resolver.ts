@@ -1,7 +1,7 @@
-import { ResolveFn } from '@angular/router';
-import { ProductService } from '../services/product.service';
 import { inject } from '@angular/core';
-import { Product, ResponseWrapper } from '../models/product.model';
+import { ResolveFn } from '@angular/router';
+import { Product } from '../models/product.model';
+import { ProductService } from '../services/product.service';
 
 export const productResolver: ResolveFn<Product> = (route, state) => {
   return inject(ProductService).getProductDetails(

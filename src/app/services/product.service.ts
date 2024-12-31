@@ -16,6 +16,7 @@ export class ProductService {
     @Inject('API_URL') private apiUrl: string
   ) {}
 
+  // ---------------Store service code example------------------------------
   // get productList$(): Observable<ResponseWrapper<Product[]>> {
   //   return this._productList$.asObservable();
   // }
@@ -38,6 +39,12 @@ export class ProductService {
     );
   }
 
+  // getProductDetails(id: string): Observable<ResponseWrapper<Product>> {
+  //   return this.httpClient.get<ResponseWrapper<Product>>(
+  //     `${this.apiUrl}/product/${id}`
+  //   );
+  // }
+
   getProductDetails(id: number): Observable<Product> {
     return this.httpClient
       .get<ResponseWrapper<Product[]>>(`${this.apiUrl}/product-list`)
@@ -46,9 +53,11 @@ export class ProductService {
         switchMap((products) => {
           const product =
             products.find((product) => product.id === id) || ({} as Product);
-          //console.log(product)
           return of(product);
         })
       );
   }
+
+
+
 }
