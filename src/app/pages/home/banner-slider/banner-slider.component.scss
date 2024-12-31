@@ -1,0 +1,29 @@
+.slider-wrapper {
+  overflow: hidden;
+  margin: 24px auto 36px;
+  .slide {
+    object-fit: cover;
+    overflow: hidden;
+    background-color: var(--color-white);
+    background-size: cover;
+    background-position: center center;
+  }
+}
+.slider-wrapper,
+.slide {
+  height: 600px;
+}
+
+@media screen and (min-width: 1150px) {
+  .slider-wrapper,
+  .slide {
+    height: 380px;
+  }
+}
+
+@media screen and (min-width: 1700px) {
+  .slider-wrapper,
+  .slide {
+    height: 800px;
+  }
+}

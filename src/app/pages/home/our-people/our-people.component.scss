@@ -1,0 +1,52 @@
+.our-people-wrapper {
+  .block-wrapper {
+    grid-template-columns: 1fr;
+    @media screen and (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media screen and (min-width: 1200px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .block {
+      overflow: hidden;
+      position: relative;
+      img {
+        transform: scale(108%);
+        transition: all 0.8s ease-in-out;
+      }
+      .overlay-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.8);
+        flex-direction: column;
+        padding: 36px;
+        justify-content: end;
+        display: flex;
+        opacity: 0;
+        transition: all 0.25s ease-in-out;
+        .social-media {
+          display: flex;
+          gap: 16px;
+          margin-top: 16px;
+          a {
+            color: var(--color-gold);
+            &:hover {
+              color: var(--color-text);
+            }
+          }
+        }
+      }
+      &:hover {
+        img {
+          transform: scale(103%);
+        }
+        .overlay-content {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

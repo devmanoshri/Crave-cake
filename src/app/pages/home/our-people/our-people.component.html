@@ -1,0 +1,23 @@
+<div class="our-people-wrapper">
+    <div class="block-wrapper">
+      <div class="block text-block text-center">
+        <h4>Our People</h4>
+        <div class="separator my-3"></div>
+        <p>Mauris vitae ultricies leo integer. Lorem ipsum dolor sit amet.</p>
+        <a href="" class="link">view more</a>
+      </div>
+      <div class="block" *ngFor="let people of ourPeople; let i = index">
+        <img src="assets/images/home/people({{ i + 1 }}).jpg" alt="" />
+        <div class="overlay-content">
+          <h5 class="mb-1">{{ people.name }}</h5>
+          <p>{{ people.role }}</p>
+          <div class="social-media">
+            <a href=""><i class="ph-fill ph-facebook-logo"></i></a>
+            <a href=""><i class="ph-fill ph-twitter-logo"></i></a>
+            <a href=""><i class="ph-fill ph-linkedin-logo"></i></a>
+            <a href=""><i class="ph-fill ph-instagram-logo"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

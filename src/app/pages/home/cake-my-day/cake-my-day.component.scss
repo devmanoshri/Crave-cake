@@ -1,0 +1,22 @@
+.two-column {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 50px;
+    margin-bottom: 90px;
+    @media screen and (min-width: 1200px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .drop-cap {
+      position: relative;
+      vertical-align: top;
+      float: left;
+      line-height: 48px;
+      font-size: 3.5rem;
+      font-family: var(--font-cursive);
+      color: var(--color-gold);
+      text-align: center;
+      margin: 12px 23px 0 0;
+      font-style: normal;
+    }
+  }
+  

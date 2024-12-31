@@ -1,0 +1,9 @@
+<div class="slider-wrapper">
+  <div
+    class="slide"
+    *ngFor="let item of [1, 2, 3]; let i = index"
+    [ngStyle]="{
+        'background-image': 'url(' + './assets/images/home/home-slider-' + (i + 1) + '.jpg' + ')',
+    }"
+  ></div>
+</div>
