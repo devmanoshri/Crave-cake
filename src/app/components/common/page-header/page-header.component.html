@@ -1,16 +1,27 @@
 <header>
   <div class="logo">Crave-cakes</div>
-  <nav class="container-fluid">
-    <a routerLink="/home" routerLinkActive="active">Home</a>
-    <a routerLink="/products/list" routerLinkActive="active">Products</a>
-    <a routerLink="/about" routerLinkActive="active">About</a>
-    <a routerLink="/contact-us" routerLinkActive="active">Contact us</a>
-  </nav>
-  <div class="cart-container">
-    <a routerLink="/cart" routerLinkActive="active">
+  <nav class="menu container-fluid">
+    <i
+      class="ph ph-list hamburger-menu"
+      (click)="showDropdown = !showDropdown"
+    ></i>
+    <ul [ngClass]="{ 'dropdown-menu': showDropdown }">
+      <li>
+        <a routerLink="/home" routerLinkActive="active">Home</a>
+      </li>
+      <li>
+        <a routerLink="/products/list" routerLinkActive="active">Products</a>
+      </li>
+      <li>
+        <a routerLink="/about" routerLinkActive="active">About</a>
+      </li>
+      <li>
+        <a routerLink="/contact-us" routerLinkActive="active">Contact us</a>
+      </li>
+    </ul>
+    <a class="cart" routerLink="/cart" routerLinkActive="active">
       <span class="cart-count">6</span>
       <i class="cart-icon ph ph-basket"></i>
     </a>
-  </div>
-  <span id="back-to-top"></span>
+  </nav>
 </header>
